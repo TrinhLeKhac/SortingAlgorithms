@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.Random;
 
 public class SortingAlgorithms {
 
@@ -49,12 +49,22 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void printArray(int i, int[] a) {
-        System.out.println(i + ": " + Arrays.toString(a));
+    public static void printArray(int i, int[] numbers) {
+        System.out.print("Step " + i + ": ");
+        for(int number: numbers){
+            System.out.print(number);
+            System.out.print(" ");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
-        int[] a = {5, 3, 2, 7, 8, 1, 2};
-        selectionSort(a);
+
+        Random rand = new Random();
+        int[] numbers = new int[10];
+        for(int i = 0; i < 10; i++) {
+            numbers[i] = rand.nextInt(100);
+        }
+        selectionSort(numbers);
     }
 }
